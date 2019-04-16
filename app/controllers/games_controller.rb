@@ -1,10 +1,10 @@
 class GamesController < ApplicationController
 
   def index
-    # change this number to change the total rounds in the game
+    # sets the total rounds in the game
     rounds = 5
 
-    # create empty array of rounds
+    # creates an array of random rounds
     session[:rounds] = Waste.order("RANDOM()").limit(rounds)
 
     # set current round to 0
