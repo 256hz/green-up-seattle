@@ -2,10 +2,12 @@
 
 <p>Here are the rules to the game.</p>
 
-<<ol>
+<ol>
   <li>The item.</li>
   <li>Pick the right place to dispose of the item.</li>
-  <li>Get _ points for each right answer.</li>
-  <li>There are _ rounds.</li>
+  <li>Get 1 point for each right answer.</li>
+  <li>There are <%= session[:rounds].size %> rounds.</li>
   <li>Good luck!</li>
-</ol>>
+</ol>
+
+<%= link_to 'New Game', '/games/round' %>
