@@ -1,0 +1,2 @@
+class Hood < ApplicationRecord
+end
