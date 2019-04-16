@@ -1,3 +1,13 @@
-<h3>Which waste bin does this go in?</h3>
+<%= flash[:message] %>
 
-<%= session[:rounds] %>
+<h5>Points: <%= session[:points] %></h5>
+<h3>Which bin does this go in?</h3>
+<h4>Round <%= session[:round] %> </h4>
+
+Object: <%= @waste['name'] %>
+
+<%= form_tag ({controller: 'games', action: 'round', method: 'post'}) do %>
+<%= submit_tag value='trash' %>
+<%= submit_tag value='recycling' %>
+<%= submit_tag value='compost' %>
+<% end %>
