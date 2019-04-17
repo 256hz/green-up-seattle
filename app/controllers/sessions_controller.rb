@@ -5,8 +5,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-      session[:user_id] = params[:id]
+    @user = User.find_by(username: params[:username]).authenticate(params[:password])
+    if @user
+      session[:user_id] = params[:user][:id]
       redirect_to '/'
+    else
+      flash[:message] = "Incorrect Login information"
+      redirect_to '/'
+    end
   end
 
   def destroy
