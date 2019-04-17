@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '>= 3.4.1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
