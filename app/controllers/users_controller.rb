@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
   before_action :require_login
-  skip_before_action :require_login, only: [:index, :new]
+  skip_before_action :require_login, only: [:index, :new, :create]
 
   def new
-      @user = User.new
+    @user = User.new
   end
 
   def show
@@ -15,7 +15,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = params[:user][:id]
+      flash[:message] = "Welcome to the hood!"
+      # byebug
+      redirect_to @user
+    else
+      render :new
+    end
+
   end
 
   private
@@ -25,7 +34,8 @@ class UsersController < ApplicationController
   end
 
   def require_login
-    return head(:forbidden) unless session.include? :user_id
+    # byebug
+    return head(:forbidden) unless !session.nil?
   end
 
 end

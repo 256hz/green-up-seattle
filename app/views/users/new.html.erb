@@ -8,12 +8,13 @@
 <%= f.text_field :username %>
 <br>
 <%= f.label :password %>
-<%= f.text_field :password %>
+<%= f.password_field :password %>
 <br>
 <%= f.label :password_confirmation %>
-<%= f.text_field :password_confirmation %>
+<%= f.password_field :password_confirmation %>
 <br>
 <%= f.label :hood_id %>
 <%= f.collection_select :hood_id, Hood.all, :id, :name, include_blank: 'Select your \'hood' %>
+<br>
 <%= f.submit %>
 <% end %>

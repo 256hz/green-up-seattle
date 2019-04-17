@@ -4,9 +4,17 @@
 
 <p>Log in:</p>
 
-<p>#username</p>
+<%= flash[:message] %>
+<br>
+<%= form_tag('/', method: :post) do %>
+<%= label_tag "User name" %>
+<%= text_field_tag :username %>
+<br>
+<%= label_tag "Password" %>
+<%= password_field_tag :password %>
+<br>
+<%= submit_tag "Login"%>
+<% end %>
 
-<p>#password</p>
 
-
-<p>New? <%= link_to "Create an account"%></p>
+<p>New? <%= link_to "Create an account", new_user_path %></p>

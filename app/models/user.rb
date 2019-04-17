@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_secure_password
   belongs_to :hood
   has_many :rounds
   has_many :games, through: :rounds
