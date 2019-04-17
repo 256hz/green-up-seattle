@@ -12,7 +12,7 @@ Game.destroy_all
 Round.destroy_all
 Waste.destroy_all
 
-hood1_north   = Hood.create(name: 'North Seattle Nightmares', hood_score: 0)
+hood1_north   = Hood.create!(name: 'North Seattle Nightmares', hood_score: 0)
 hood2_ballard = Hood.create(name: 'Ballard Brigade',          hood_score: 0)
 hood3_udub    = Hood.create(name: 'U District Undertakers',   hood_score: 0)
 hood4_mag     = Hood.create(name: 'The Magical MagInQueens',  hood_score: 0)
@@ -23,21 +23,21 @@ hood8_west    = Hood.create(name: 'West Seattle Wahoos',      hood_score: 0)
 hood9_south   = Hood.create(name: 'South Seattle Strikers',   hood_score: 0)
 hood10_ferry  = Hood.create(name: 'Ferocious Ferry Riders',   hood_score: 0)
 
-user1 = User.create(name: 'Joe', username: 'jyang', hood_id: hood1.id)
-user2 = User.create(name: 'Abe', username: 'ad',    hood_id: hood2.id)
+user1 = User.create!(name: 'Joe', username: 'jyang', hood_id: hood1_north.id, password: 'joe')
+user2 = User.create(name: 'Abe', username: 'ad',    hood_id: hood2_ballard.id, password: 'abe')
 
-game1 = Game.new
+game1 = Game.create
 
-waste1 = Waste.create(name: 'Banana peel',            category: 'compost')
-waste2 = Waste.create(name: 'Coffee grounds',         category: 'compost')
-waste3 = Waste.create(name: 'Tea bags',               category: 'compost')
-waste4 = Waste.create(name: 'Wooden chopsticks',      category: 'compost')
-waste5 = Waste.create(name: 'Coffee grounds',         category: 'compost')
-waste6 = Waste.create(name: 'Carrot tops',            category: 'compost')
-waste7 = Waste.create(name: 'Eggshells',              category: 'compost')
+waste1  = Waste.create!(name: 'Banana peel',          category: 'compost')
+waste2  = Waste.create(name: 'Coffee grounds',        category: 'compost')
+waste3  = Waste.create(name: 'Tea bags',              category: 'compost')
+waste4  = Waste.create(name: 'Wooden chopsticks',     category: 'compost')
+waste5  = Waste.create(name: 'Coffee grounds',        category: 'compost')
+waste6  = Waste.create(name: 'Carrot tops',           category: 'compost')
+waste7  = Waste.create(name: 'Eggshells',             category: 'compost')
 
-waste8 = Waste.create(name: 'Chicken bones',          category: 'trash')
-waste9 = Waste.create(name: 'Styrofoam cup',          category: 'trash')
+waste8  = Waste.create(name: 'Chicken bones',         category: 'trash')
+waste9  = Waste.create(name: 'Styrofoam cup',         category: 'trash')
 waste10 = Waste.create(name: 'Loose soda bottle lid', category: 'trash')
 waste11 = Waste.create(name: 'Potato chip bag',       category: 'trash')
 waste12 = Waste.create(name: 'Candy wrapper',         category: 'trash')
