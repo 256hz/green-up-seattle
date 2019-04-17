@@ -1,5 +1,7 @@
 <h3>Thanks for playing!</h3>
 
-<p>You got <%= session[:points] %> out of a possible <%= session[:rounds].size %>. </p>
+<p> You got <%= session[:points] %> / <%= session[:rounds].size %> points. </p>
 
-<%= link_to 'New Game', '/games/'%>
+<p> Now <%= @hood.name %> has a total of <%= @hood.hood_score %> points.  Way to go!</p>
+
+<%= link_to 'New Game', '/games/' %>

@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Bin It to Win It</a>
+      <% if !session[:user_id].blank? %>
+        <a class="navbar-text" href="/">My Profile</a>
+      <% end %>
+      <a class="navbar-text" href="/">Hoods</a>
+      <a class="navbar-text" href="/">Play Game</a>
+      <a class="navbar-text" href="/">Resources/Links</a>
+      <% if !session[:user_id].blank? %>
+        <a class="navbar-text" href="/">Logout</a>
+      <% end %>
+    </div>
+  </div>
+</nav>
