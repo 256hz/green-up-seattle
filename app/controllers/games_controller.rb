@@ -44,7 +44,6 @@
   end
 
   def game_end
-    byebug
     # total up score, add to user's score, add to hood's score
     @hood = Hood.find_by(name: session[:hood])
     @hood_score = @hood.hood_score += session[:points]
