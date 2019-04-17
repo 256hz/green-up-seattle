@@ -12,8 +12,16 @@
 # Round.destroy_all
 # Waste.destroy_all
 
-hood1 = Hood.create(name: 'Downtown', hood_score: 0)
-hood2 = Hood.create(name: 'Greenwood', hood_score: 0)
+hood1 = Hood.create(name: 'North Seattle Nightmares', hood_score: 0)
+hood2 = Hood.create(name: 'Ballard Brigade', hood_score: 0)
+hood3 = Hood.create(name: 'U District Undertakers', hood_score: 0)
+hood4 = Hood.create(name: 'The Magical MagInQueens', hood_score: 0)
+hood5 = Hood.create(name: 'Cap Hill Crushers', hood_score: 0)
+hood6 = Hood.create(name: 'Downtown Dragons', hood_score: 0)
+hood7 = Hood.create(name: 'East Seattle Endgame', hood_score: 0)
+hood8 = Hood.create(name: 'West Seattle Wahoos', hood_score: 0)
+hood9 = Hood.create(name: 'South Seattle Strikers', hood_score: 0)
+hood10 = Hood.create(name: 'Ferocious Ferry Riders', hood_score: 0)
 
 user1 = User.create(name: 'Joe', username: 'jyang', hood_id: hood1.id)
 user2 = User.create(name: 'Abe', username: 'ad', hood_id: hood2.id)
