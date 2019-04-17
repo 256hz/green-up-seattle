@@ -1,3 +1,3 @@
 class Waste < ApplicationRecord
-  belongs_to :round
+  has_many :rounds
 end

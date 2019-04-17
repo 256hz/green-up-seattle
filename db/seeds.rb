@@ -12,21 +12,23 @@ Game.destroy_all
 Round.destroy_all
 Waste.destroy_all
 
-user1 = User.create(name: 'Joe', username: 'jyang')
-user2 = User.create(name: 'Abe', username: 'ad')
+hood1 = Hood.create(name: 'Downtown', hood_score: 0)
+hood2 = Hood.create(name: 'Greenwood', hood_score: 0)
 
-hood1 = Hood.create(name: 'Downtown')
-hood2 = Hood.create(name: 'Greenwood')
+user1 = User.create(name: 'Joe', username: 'jyang', hood_id: hood1.id)
+user2 = User.create(name: 'Abe', username: 'ad', hood_id: hood2.id)
+
+game1 = Game.new
 
 waste1 = Waste.create(name: 'Banana peel', category: 'compost')
 waste2 = Waste.create(name: 'Coffee grounds', category: 'compost')
-waste3 = Waste.create(name: 'Chicken bones', category: 'compost')
-waste4 = Waste.create(name: 'Tea bags', category: 'compost')
-waste5 = Waste.create(name: 'Wooden chopsticks', category: 'compost')
-waste6 = Waste.create(name: 'Coffee grounds', category: 'compost')
-waste7 = Waste.create(name: 'Carrot tops', category: 'compost')
-waste8 = Waste.create(name: 'Eggshells', category: 'compost')
+waste3 = Waste.create(name: 'Tea bags', category: 'compost')
+waste4 = Waste.create(name: 'Wooden chopsticks', category: 'compost')
+waste5 = Waste.create(name: 'Coffee grounds', category: 'compost')
+waste6 = Waste.create(name: 'Carrot tops', category: 'compost')
+waste7 = Waste.create(name: 'Eggshells', category: 'compost')
 
+waste8 = Waste.create(name: 'Chicken bones', category: 'trash')
 waste9 = Waste.create(name: 'Styrofoam cup', category: 'trash')
 waste10 = Waste.create(name: 'Loose soda bottle lid', category: 'trash')
 waste11 = Waste.create(name: 'Potato chip bag', category: 'trash')
