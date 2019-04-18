@@ -1,0 +1,2 @@
+class SubHoodsController < ApplicationController
+end
