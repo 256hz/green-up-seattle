@@ -1,21 +1,24 @@
 <h1>Home page</h1>
 
-<h2>Welcome to Greenest Hood - Seattle</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 <% if !logged_in %>
-  <p>Log in:</p>
-
-  <%= flash[:message] %>
+<div class="log-in-box">
+  <h4>Log in:</h4>
   <br>
   <%= form_tag('/', method: :post) do %>
-    <%= label_tag "User name" %>
+    <%= label_tag "User name: " %>
     <%= text_field_tag :username %>
-    <br>
-    <%= label_tag "Password" %>
+    <br><br>
+    <%= label_tag "Password: " %>
     <%= password_field_tag :password %>
     <br>
-    <%= submit_tag "Login"%>
+    <%= flash[:message] %>
+    <br>
+    <button type="submit" class="btn btn-primary" submit_tag="Login">Log In</button>
   <% end %>
-
+<br>
 <p>New? <%= link_to "Create an account", new_user_path %></p>
+</div>
+
 <% end %>

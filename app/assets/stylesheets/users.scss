@@ -1,3 +1,16 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  border: 1px solid black;
+}
+
+.log-in-box {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px;
+  width: 400px;
+  text-align: center;
+  background-color: #ddd;
+}

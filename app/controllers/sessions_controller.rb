@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:username])
     # byebug
     if @user
-      byebug
       if @user.authenticate(params[:password])
         session[:user_id] = @user.id
         flash[:message] = "Welcome to the hood!"
