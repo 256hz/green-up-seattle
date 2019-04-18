@@ -7,7 +7,19 @@
 <h3> Total Points: <%= @hood.hood_score %> </h3>
 
 <% if @hood == Hood.all.max_by(&:hood_score) %>
-  <h4>Your hood is in first place!</h4>
+  <h4>Congrats <%= @hood.name.split.last %>, you're in first place!</h4>
+
+<% else %>
+  <% @hoods = Hood.all.sort_by(&:hood_score).reverse %>
+  <% (1..@hoods.count-1).to_a.each do |place| %>
+
+    <% if @hoods[place] == @hood %>
+      <h4> <%= (place + 1).ordinalize %> Place Overall</h4>
+      <h4> Only <%= (@hoods[place-1].hood_score+1) - @hood.hood_score %> points to beat the <%= @hoods[place-1].name %>!</h4>
+    <% end %>
+
+  <% end %>
+
 <% end %>
 
 <h4> Team Neighborhoods: </h4>
