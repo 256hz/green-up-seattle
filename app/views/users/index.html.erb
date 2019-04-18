@@ -3,19 +3,19 @@
 <h2>Welcome to Greenest Hood - Seattle</h2>
 
 <% if !logged_in %>
-<p>Log in:</p>
+  <p>Log in:</p>
 
-<%= flash[:message] %>
-<br>
-<%= form_tag('/', method: :post) do %>
-<%= label_tag "User name" %>
-<%= text_field_tag :username %>
-<br>
-<%= label_tag "Password" %>
-<%= password_field_tag :password %>
-<br>
-<%= submit_tag "Login"%>
-<% end %>
+  <%= flash[:message] %>
+  <br>
+  <%= form_tag('/', method: :post) do %>
+    <%= label_tag "User name" %>
+    <%= text_field_tag :username %>
+    <br>
+    <%= label_tag "Password" %>
+    <%= password_field_tag :password %>
+    <br>
+    <%= submit_tag "Login"%>
+  <% end %>
 <% end %>
 
 
