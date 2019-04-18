@@ -1,15 +1,19 @@
+<% if logged_in %>
+  <% @user = User.find(session[:user_id]) %>
+<% end %>
+
 <nav class="navbar navbar-default" role="navigation">
-  <div class="container">
+  <div class="container-nav">
     <div class="navbar-header">
       <a class="navbar-brand" href="/"><img src="/green_up_logo.svg" alt="Green Up Seattle Logo"></a>
       <div class="navbar-links">
-        <% if !session[:user_id].blank? %>
-          <a class="navbar-text" id="username" href="/users/<%=session[:user_id]%>">User: <%= User.find(session[:user_id]).name %></a>
+        <% if logged_in %>
+          <a class="navbar-text username" href="/users/<%= @user.id %>"><%= @user.name %></a>
         <% end %>
         <a class="navbar-text" href="/hoods">Hoods</a>
         <a class="navbar-text" href="/games">Play Game</a>
         <a class="navbar-text" href="/resources">Resources/Links</a>
-        <% if !session[:user_id].blank? %>
+        <% if logged_in %>
           <a class="navbar-text" href="/logout">Logout</a>
         <% end %>
       </div>

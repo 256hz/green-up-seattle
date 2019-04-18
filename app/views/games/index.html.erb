@@ -1,13 +1,18 @@
-<h1>This is the game</h1>
+<% if logged_in %>
+  <h1>This is the game</h1>
 
-<p>Here are the rules to the game.</p>
+  <p>Here are the rules to the game.</p>
 
-<ol>
-  <li>The item.</li>
-  <li>Pick the right place to dispose of the item.</li>
-  <li>Get 1 point for each right answer.</li>
-  <li>There are <%= session[:rounds].size %> rounds.</li>
-  <li>Good luck!</li>
-</ol>
+  <ol>
+    <li>The item.</li>
+    <li>Pick the right place to dispose of the item.</li>
+    <li>Get 1 point for each right answer.</li>
+    <li>There are <%= session[:rounds].size %> rounds.</li>
+    <li>Good luck!</li>
+  </ol>
 
-<%= link_to 'New Game', '/games/round' %>
+  <%= link_to 'New Game', '/games/round' %>
+<% else %>
+  <h2 class="flash">You must log in to play!</h2>
+  <%= link_to 'Login', '/users' %>
+<% end %>

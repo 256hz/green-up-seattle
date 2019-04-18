@@ -1,21 +1,22 @@
   class GamesController < ApplicationController
   before_action :set_round, only: [:round, :answer]
-  before_action :logged_in?
 
   def index
-    # sets the total rounds in the game
-    rounds = 5
-    game = Game.create
+    if logged_in
+      # sets the total rounds in the game
+      rounds = 5
+      game = Game.create
 
-    session[:rounds] = []
-    session[:round] = 1
-    session[:points] = 0
-    session[:hood] = User.find(session[:user_id]).hood.name
+      session[:rounds] = []
+      session[:round] = 1
+      session[:points] = 0
+      session[:hood] = User.find(session[:user_id]).hood.name
 
-    waste_ids = Waste.ids.sample(rounds)
-    waste_ids.each do |waste_id|
-      round = Round.create(user_id: session[:user_id], game_id: game.id, waste_id: waste_id, score: 0)
-      session[:rounds] << round.id
+      waste_ids = Waste.ids.sample(rounds)
+      waste_ids.each do |waste_id|
+        round = Round.create(user_id: session[:user_id], game_id: game.id, waste_id: waste_id, score: 0)
+        session[:rounds] << round.id
+      end
     end
 
   end
@@ -56,10 +57,6 @@
       # byebug
       @round_no = session[:round]
       @round = Round.find(session[:rounds][@round_no - 1])
-    end
-
-    def logged_in?
-      redirect_to '/' if !logged_in
     end
 
 end
