@@ -96,8 +96,8 @@ SubHood.create(hood_id: hood10_ferry.id,  name: 'Bainbridge')
 SubHood.create(hood_id: hood10_ferry.id,  name: 'Bremerton')
 
 
-user1 = User.create!(name: 'Joe', username: 'jyang', hood_id: hood1_north.id, password: 'joe')
-user2 = User.create(name: 'Abe', username: 'ad',    hood_id: hood10_ferry.id, password: 'abe')
+user1 = User.create!(name: 'Joe', username: 'joe', hood_id: hood1_north.id, password: 'joe')
+user2 = User.create(name: 'Abe', username: 'abe',  hood_id: hood10_ferry.id, password: 'abe')
 
 game1 = Game.create
 
