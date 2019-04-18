@@ -9,7 +9,6 @@
     session[:rounds] = []
     session[:round] = 1
     session[:points] = 0
-    session[:user_id] = User.first.id
     session[:hood] = User.find(session[:user_id]).hood.name
 
     waste_ids = Waste.ids.shuffle(rounds)

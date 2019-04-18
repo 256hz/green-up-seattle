@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :hoods
+  resources :hoods, only: [:show, :index]
   resources :users
 
   get 'games', to: 'games#index'
@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post 'games/round', to: 'games#answer'
   get '/games/game_end', to: 'games#game_end'
   post '/', to: 'sessions#create'
+  get '/logout', to: 'sessions#logout'
   root 'users#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
