@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :sub_hoods
   resources :hoods, only: [:show, :index]
   resources :users
 
