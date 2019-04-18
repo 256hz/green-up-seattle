@@ -94,10 +94,14 @@ SubHood.create(hood_id: hood9_south.id,   name: 'Rainier Beach    '.strip)
 
 SubHood.create(hood_id: hood10_ferry.id,  name: 'Bainbridge')
 SubHood.create(hood_id: hood10_ferry.id,  name: 'Bremerton')
+SubHood.create(hood_id: hood10_ferry.id,  name: 'Vashon')
 
-
+user1 = User.create!(name: 'Joe', username: 'jyang', hood_id: hood1_north.id, password: 'joe', password_confirmation: 'joe')
+user2 = User.create(name: 'Abe', username: 'ad',    hood_id: hood10_ferry.id, password: 'abe', password_confirmation: 'abe')
+=begin
 user1 = User.create!(name: 'Joe', username: 'joe', hood_id: hood1_north.id, password: 'joe')
 user2 = User.create(name: 'Abe', username: 'abe',  hood_id: hood10_ferry.id, password: 'abe')
+=end
 
 game1 = Game.create
 
