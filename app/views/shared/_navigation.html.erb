@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">GreenUp! Seattle</a>
+      <a class="navbar-brand" href="/"><img src="/green_up_logo.svg" alt="Green Up Seattle Logo"></a>
       <% if !session[:user_id].blank? %>
         <a class="navbar-text" href="/users/<%=session[:user_id]%>">My Profile</a>
       <% end %>
