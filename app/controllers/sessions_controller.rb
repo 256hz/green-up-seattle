@@ -2,8 +2,9 @@ class SessionsController < ApplicationController
 
   def create #login
     @user = User.find_by(username: params[:username])
+    # byebug
     if @user
-      # byebug
+      byebug
       if @user.authenticate(params[:password])
         session[:user_id] = @user.id
         flash[:message] = "Welcome to the hood!"
@@ -11,7 +12,7 @@ class SessionsController < ApplicationController
       else
         flash[:message] = "Incorrect Login information"
         redirect_to '/'
-      end  
+      end
     else
       flash[:message] = "Incorrect Login information"
       redirect_to '/'
