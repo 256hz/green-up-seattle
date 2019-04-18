@@ -7,7 +7,7 @@
 <% end %>
 
 <%= form_for @user do |f| %>
-  <%= f.label :name %>
+  <%= f.label :name, options = {class: "new-user-label"} %>
   <%= f.text_field :name %>
   <br>
   <%= f.label :username %>
@@ -20,7 +20,7 @@
   <%= f.password_field :password_confirmation %>
   <br>
   <%= f.label :hood_id %>
-  <%= f.collection_select :hood_id, Hood.all, :id, :name, include_blank: 'Select your \'hood' %>
+  <%= f.collection_select :hood_id, Hood.all, :id, :name_with_id, include_blank: 'Select your \'hood' %>
   <br>
   <%= f.submit %>
 <% end %>

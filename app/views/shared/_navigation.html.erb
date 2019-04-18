@@ -2,15 +2,17 @@
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="/"><img src="/green_up_logo.svg" alt="Green Up Seattle Logo"></a>
-      <% if !session[:user_id].blank? %>
-        <a class="navbar-text" href="/users/<%=session[:user_id]%>">My Profile</a>
-      <% end %>
-      <a class="navbar-text" href="/hoods">Hoods</a>
-      <a class="navbar-text" href="/games">Play Game</a>
-      <a class="navbar-text" href="/resources">Resources/Links</a>
-      <% if !session[:user_id].blank? %>
-        <a class="navbar-text" href="/logout">Logout</a>
-      <% end %>
+      <div class="navbar-links">
+        <% if !session[:user_id].blank? %>
+          <a class="navbar-text username" href="/users/<%=session[:user_id]%>"><%= User.find(session[:user_id]).name %></a>
+        <% end %>
+        <a class="navbar-text" href="/hoods">Hoods</a>
+        <a class="navbar-text" href="/games">Play Game</a>
+        <a class="navbar-text" href="/resources">Resources/Links</a>
+        <% if !session[:user_id].blank? %>
+          <a class="navbar-text" href="/logout">Logout</a>
+        <% end %>
+      </div>
     </div>
   </div>
 </nav>

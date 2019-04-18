@@ -27,7 +27,7 @@
 
   def answer
     if params[:commit] == session[:waste]['category']
-      session[:points] += 1
+      session[:points] += 10
       @round.update(score: 1)
       flash[:message] = 'Nice!'
     else
