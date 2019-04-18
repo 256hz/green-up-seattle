@@ -12,16 +12,16 @@ Game.destroy_all
 Round.destroy_all
 Waste.destroy_all
 
-hood1_north   = Hood.create!(name: 'North Seattle Nightmares', hood_score: 0)
-hood2_ballard = Hood.create(name: 'Ballard Brigade',           hood_score: 0)
-hood3_udub    = Hood.create(name: 'U District Undertakers',    hood_score: 0)
-hood4_mag     = Hood.create(name: 'The Magical MagInQueens',   hood_score: 0)
-hood5_cap     = Hood.create(name: 'Cap Hill Crushers',         hood_score: 0)
-hood6_down    = Hood.create(name: 'Downtown Dragons',          hood_score: 0)
-hood7_east    = Hood.create(name: 'East Seattle Endgame',      hood_score: 0)
-hood8_west    = Hood.create(name: 'West Seattle Wahoos',       hood_score: 0)
-hood9_south   = Hood.create(name: 'South Seattle Strikers',    hood_score: 0)
-hood10_ferry  = Hood.create(name: 'Ferocious Ferryriders',     hood_score: 0)
+hood1_north   = Hood.create!(name: 'North Seattle Nightmares', hood_score: 101)
+hood2_ballard = Hood.create(name: 'Ballard Brigade',           hood_score: 66)
+hood3_udub    = Hood.create(name: 'U District Undertakers',    hood_score: 54)
+hood4_mag     = Hood.create(name: 'The Magical MagInQueens',   hood_score: 123)
+hood5_cap     = Hood.create(name: 'Cap Hill Crushers',         hood_score: 154)
+hood6_down    = Hood.create(name: 'Downtown Dragons',          hood_score: 143)
+hood7_east    = Hood.create(name: 'East Seattle Endgame',      hood_score: 111)
+hood8_west    = Hood.create(name: 'West Seattle Wahoos',       hood_score: 89)
+hood9_south   = Hood.create(name: 'South Seattle Strikers',    hood_score: 189)
+hood10_ferry  = Hood.create(name: 'Ferocious Ferryriders',     hood_score: 155)
 
 SubHood.create!(hood_id: hood1_north.id,   name: 'Bitter lake')
 SubHood.create(hood_id: hood1_north.id,   name: 'Broadview')
