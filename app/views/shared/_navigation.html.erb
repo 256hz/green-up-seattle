@@ -1,9 +1,9 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Bin It to Win It</a>
+      <a class="navbar-brand" href="/">GreenUp! Seattle</a>
       <% if !session[:user_id].blank? %>
-        <a class="navbar-text" href="/">My Profile</a>
+        <a class="navbar-text" href="/users/<%=session[:user_id]%>">My Profile</a>
       <% end %>
       <a class="navbar-text" href="/hoods">Hoods</a>
       <a class="navbar-text" href="/games">Play Game</a>
