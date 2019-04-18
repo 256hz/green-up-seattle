@@ -2,6 +2,7 @@
 
 <h2>Welcome to Greenest Hood - Seattle</h2>
 
+<% if !logged_in %>
 <p>Log in:</p>
 
 <%= flash[:message] %>
@@ -14,6 +15,7 @@
 <%= password_field_tag :password %>
 <br>
 <%= submit_tag "Login"%>
+<% end %>
 <% end %>
 
 

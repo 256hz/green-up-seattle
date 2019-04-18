@@ -5,11 +5,11 @@
       <% if !session[:user_id].blank? %>
         <a class="navbar-text" href="/">My Profile</a>
       <% end %>
-      <a class="navbar-text" href="/">Hoods</a>
-      <a class="navbar-text" href="/">Play Game</a>
-      <a class="navbar-text" href="/">Resources/Links</a>
+      <a class="navbar-text" href="/hoods">Hoods</a>
+      <a class="navbar-text" href="/games">Play Game</a>
+      <a class="navbar-text" href="/resources">Resources/Links</a>
       <% if !session[:user_id].blank? %>
-        <a class="navbar-text" href="/">Logout</a>
+        <a class="navbar-text" href="/logout">Logout</a>
       <% end %>
     </div>
   </div>

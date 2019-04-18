@@ -23,8 +23,8 @@ hood8_west    = Hood.create(name: 'West Seattle Wahoos',      hood_score: 0)
 hood9_south   = Hood.create(name: 'South Seattle Strikers',   hood_score: 0)
 hood10_ferry  = Hood.create(name: 'Ferocious Ferry Riders',   hood_score: 0)
 
-user1 = User.create(name: 'Joe', username: 'jyang', hood_id: hood1.id)
-user2 = User.create(name: 'Abe', username: 'ad',    hood_id: hood2.id)
+user1 = User.create(name: 'Joe', username: 'jyang', hood_id: hood1_north.id)
+user2 = User.create(name: 'Abe', username: 'ad',    hood_id: hood2_ballard.id)
 
 game1 = Game.new
 
