@@ -16,6 +16,14 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
 
+$happy-green: #7CBD31
+
+body
+  font-family: 'Lato', sans-serif
+
+.col-sm
+  border: 1px solid red
+
 .username
   color: white
   text-shadow: 0 0 2px white
@@ -27,14 +35,34 @@
   vertical-align: middle
 
 .navbar-default .navbar-text
-  color: #7CBD31
+  font-family: 'PT Sans', sans-serif
+  color: $happy-green
   &:hover
-    color: #fff
+    color: #5A9B29
+    text-decoration: none
 
 .container
-  float: left
+  // border: 1px solid red
+
+.container-form
+  // border: 1px solid red
+  text-align: center
+
+.label_class
+  // border: 1px solid red
+  text-align: right
+  padding-right: 10px
+
+.field_class
+  // border: 1px solid red
+  text-align: left
+  // align-content: left
+  padding-left: 10px
+
+.container-nav
+  // float: left
   // border: 1px solid teal
-  width: 100%
+  // width: 100%
 
 .navbar-header
   // border: 1px solid red
@@ -56,18 +84,21 @@
   float: right
   font-size: 20px
   text-shadow: 0 0 1.25px white
-  // color: #7CBD31
 
 .navbar-text a
   display: inline-block
   height: 100%
   vertical-align: middle
-  // margin: 5px
 
 .navbar-text
   // border: 1px solid blue
   text-shadow: 0 0 1.25px white
-  // color: #7CBD31
+
+.message
+  text-align: center
+  color: $happy-green
+  margin: 15
+  // text-shadow: 0 0 1px gray
 
 .footer
   position: absolute
