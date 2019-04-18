@@ -11,7 +11,7 @@
     session[:points] = 0
     session[:hood] = User.find(session[:user_id]).hood.name
 
-    waste_ids = Waste.ids.sample(rounds)
+    waste_ids = Waste.ids.shuffle(rounds)
     waste_ids.each do |waste_id|
       round = Round.create(user_id: session[:user_id], game_id: game.id, waste_id: waste_id, score: 0)
       session[:rounds] << round.id
