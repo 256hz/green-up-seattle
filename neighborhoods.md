@@ -1,77 +1,77 @@
 * NORTH SEATTLE
-  - bitter lake
-  - broadview
-  - haller lake
-  - pinehurst
-  - northgate
-  - olympic hill
-  - cedarpoint
-  - victory heights
-  - lake city
-  - matthew's beach
-  - north beach
-  - blue ridge
-  - crown hill
-  - greenwood
-  - north college park
-  - maple leaf
+  - Bitter Lake       
+  - Broadview         
+  - Haller Lake        
+  - Pinehurst           
+  - Northgate         
+  - Olympic Hill        
+  - Cedarpoint        
+  - Victory Heights   
+  - Lake City         
+  - Matthew's Beach   
+  - North Beach       
+  - Blue Ridge        
+  - Crown Hill        
+  - Greenwood         
+  - North College Park
+  - Maple Leaf        
 
 * BALLARD/FREMONT/PHINNEY
 
 * U DISTRICT
-  - wedgewood
-  - green lake
-  - roosevelt
-  - view ridge
-  - sandy point
-  - windermere
-  - bryant
-  - ravenna
-  - laurelhurst
-  - university district
-  - wallingford
+  - Wedgewood           
+  - Green Lake          
+  - Roosevelt           
+  - View Ridge          
+  - Sandy point         
+  - Windermere          
+  - Bryant              
+  - Ravenna             
+  - Laurelhurst         
+  - University District
+  - Wallingford         
 
 * MAGINQUEEN
-  - magnolia
-  - interbay
-  - queen anne
+  - Magnolia
+  - Interbay
+  - Queen Anne
 
 * CAP HILL
-  - eastlake
-  - montlake
-  - capitol hill
-  - madison park
+  - Eastlake        
+  - Montlake      
+  - Capitol Hill  
+  - Madison Park  
 
 * DOWNTOWN
-  - westlake
-  - cascade
-  - belltown
-  - downtown
-  - pioneer square
-  - international district
+  - Westlake              
+  - Cascade               
+  - Belltown              
+  - Downtown              
+  - Pioneer Square        
+  - International District
 
 * EAST SEATTLE
-  - central area
-  - madrona
-  - leschi
+  - Central Area
+  - Madrona     
+  - Leschi      
 
 * WEST SEATTLE
-  - alki beach
-  - west seattle
-  - delridge
+  - Alki Beach  
+  - West Seattle
+  - Delridge    
 
 * SOUTH SEATTLE
-  - harbor island
-  - sodo
-  - georgetown
-  - southpark
-  - beacon hill
-  - north beacon hill
-  - brighton
-  - rainier valley
-  - seward park
-  - south beacon hill
-  - rainier beach
+  - Harbor Island     
+  - Sodo              
+  - Georgetown        
+  - Southpark         
+  - Beacon Hill       
+  - North Beacon Hill
+  - Brighton          
+  - Rainier Valley    
+  - Seward Park       
+  - South Beacon Hill
+  - Rainier Beach     
 
 * FERRY PEOPLE
   - Bainbridge
