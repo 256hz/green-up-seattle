@@ -1,0 +1,18 @@
+<h2> <%= @hood.name %> </h2>
+
+<%= form_tag '/hoods', method: :get do %>
+  <div class='button'> <%= submit_tag 'Back' %> </div>
+<% end %>
+
+<h3> Total Points: <%= @hood.hood_score %> </h3>
+
+<% if @hood == Hood.all.max_by(&:hood_score) %>
+  <h4>Your hood is in first place!</h4>
+<% end %>
+
+<h4> Team Neighborhoods: </h4>
+<ul>
+  <% @hood.sub_hoods.each do |sub_hood| %>
+    <li> <%= sub_hood.name %> </li>
+  <% end %>
+</ul>

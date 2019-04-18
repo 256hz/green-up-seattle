@@ -1,5 +1,6 @@
   class GamesController < ApplicationController
   before_action :set_round, only: [:round, :answer]
+  before_action :logged_in?
 
   def index
     # sets the total rounds in the game
@@ -51,10 +52,14 @@
 
   private
 
-  def set_round
-    # byebug
-    @round_no = session[:round]
-    @round = Round.find(session[:rounds][@round_no - 1])
-  end
+    def set_round
+      # byebug
+      @round_no = session[:round]
+      @round = Round.find(session[:rounds][@round_no - 1])
+    end
+
+    def logged_in?
+      redirect_to '/' if !logged_in
+    end
 
 end

@@ -1,10 +1,17 @@
 class SessionsController < ApplicationController
 
   def create #login
-    @user = User.find_by(username: params[:username]).authenticate(params[:password])
+    @user = User.find_by(username: params[:username])
     if @user
-      session[:user_id] = @user.id
-      redirect_to '/'
+      # byebug
+      if @user.authenticate(params[:password])
+        session[:user_id] = @user.id
+        flash[:message] = "Welcome to the hood!"
+        redirect_to '/'
+      else
+        flash[:message] = "Incorrect Login information"
+        redirect_to '/'
+      end  
     else
       flash[:message] = "Incorrect Login information"
       redirect_to '/'
