@@ -1,4 +1,8 @@
-<h3 class="message">Create an account</h3>
+<% if !logged_in %>
+  <h3 class="message">Create an account</h3>
+<% else %>
+  <h3 class="message">Edit your account</h3>
+<% end %>
 
 <% if @errors %>
   <% @errors.each do |error| %>
@@ -6,7 +10,7 @@
   <% end %>
 <% end %>
 
-<% label_class = {class: "col-sm-5 label_class"} %>
+<% label_class = {class: "col-sm-8 label_class"} %>
 <% field_class = "col-sm-7 field_class" %>
 
 <div class="container">
@@ -16,34 +20,38 @@
     <div class="form-group row">
       <%= f.label :name, options=label_class %>
       <div class="col-sm-6 field_class">
-        <%= f.text_field :name, size: 25 %>
+        <%= f.text_field :name, size: 28 %>
       </div>
     </div>
     <div class="form-group row">
       <%= f.label :username, options=label_class %>
       <div class="col-sm-6 field_class">
-        <%= f.text_field :username, size: 25 %>
+        <%= f.text_field :username, size: 28 %>
       </div>
     </div>
     <div class="form-group row">
       <%= f.label :password, options=label_class %>
       <div class="col-sm-6 field_class">
-        <%= f.text_field :password, size: 25 %>
+        <%= f.password_field :password, size: 28 %>
       </div>
     </div>
     <div class="form-group row">
       <%= f.label :password_confirmation, options=label_class %>
       <div class="col-sm-6 field_class">
-        <%= f.text_field :password_confirmation, size: 25 %>
+        <%= f.password_field :password_confirmation, size: 28 %>
       </div>
     </div>
     <div class="form-group row">
       <%= f.label :hood_id, options=label_class %>
       <div class="col-sm-6 field_class">
-        <%= f.collection_select(:hood_id, Hood.all, :id, :name, include_blank: 'Select your \'hood') %>
+        <%= f.collection_select(:hood_id, Hood.all.sort_by(&:id), :id, :name_with_id, include_blank: 'Select your \'hood') %>
       </div>
     </div>
-    <%= f.submit name="Create"%>
+    <% if logged_in %>
+      <%= f.submit name="Update"%>
+    <% else %>
+      <%= f.submit name="Create"%>
+    <% end %>
   </div> <!-- container-form -->
 <% end %>
 

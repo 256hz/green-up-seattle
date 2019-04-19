@@ -29,7 +29,7 @@
   def answer
     if params[:commit] == session[:waste]['category']
       session[:points] += 10
-      @round.update(score: 1)
+      @round.update(score: 10)
       flash[:message] = 'Nice!'
     else
       flash[:message] = "#{session[:waste]['name']} should be put into the #{session[:waste]['category']}."
