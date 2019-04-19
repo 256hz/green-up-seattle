@@ -1,44 +1,48 @@
+
 <% if !logged_in %>
   <h3 class="message">Create an account</h3>
 <% else %>
   <h3 class="message">Edit your account</h3>
 <% end %>
-
+<br>
+<div class="log-in-box">
 <% if @errors %>
+<ul>
   <% @errors.each do |error| %>
-  <%= error %>
+  <li class="error"><%= error %></li>
   <% end %>
+</ul>
 <% end %>
 
 <% label_class = {class: "col-sm-8 label_class"} %>
 <% field_class = "col-sm-7 field_class" %>
 
 <div class="container">
-
+<% @w = 28 %>
 <%= form_for @user do |f| %>
   <div class="container-form">
     <div class="form-group row">
       <%= f.label :name, options=label_class %>
       <div class="col-sm-6 field_class">
-        <%= f.text_field :name, size: 28 %>
+        <%= f.text_field :name, size: @w %>
       </div>
     </div>
     <div class="form-group row">
       <%= f.label :username, options=label_class %>
       <div class="col-sm-6 field_class">
-        <%= f.text_field :username, size: 28 %>
+        <%= f.text_field :username, size: @w %>
       </div>
     </div>
     <div class="form-group row">
       <%= f.label :password, options=label_class %>
       <div class="col-sm-6 field_class">
-        <%= f.password_field :password, size: 28 %>
+        <%= f.password_field :password, size: @w %>
       </div>
     </div>
     <div class="form-group row">
       <%= f.label :password_confirmation, options=label_class %>
       <div class="col-sm-6 field_class">
-        <%= f.password_field :password_confirmation, size: 28 %>
+        <%= f.password_field :password_confirmation, size: @w %>
       </div>
     </div>
     <div class="form-group row">
@@ -56,3 +60,4 @@
 <% end %>
 
 </div> <!-- container -->
+</div> <!-- log in box -->
