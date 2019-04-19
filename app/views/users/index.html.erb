@@ -12,7 +12,11 @@
   <h4>Only one could be crowned as the Great Categorizer of Postwar Seattle. Only one could be victorious.</h4>
   <h2>LET THE GAMES BEGIN!</h2>
 </div>
-
+<br>
+<% if logged_in %>
+<center><a href='/games' class="btn btn-success">PLAY GAME</a></center>
+<% end %>
+<br>
 <% if !logged_in %>
 <div class="log-in-box">
   <h4>Log in:</h4>
