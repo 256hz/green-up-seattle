@@ -97,33 +97,43 @@ SubHood.create(hood_id: hood10_ferry.id,  name: 'Bremerton')
 SubHood.create(hood_id: hood10_ferry.id,  name: 'Vashon')
 
 user1 = User.create!(name: 'Joe', username: 'joe', hood_id: hood1_north.id, password: 'joe', password_confirmation: 'joe')
-user2 = User.create(name: 'Abe', username: 'abe',    hood_id: hood10_ferry.id, password: 'abe', password_confirmation: 'abe')
-=begin
-user1 = User.create!(name: 'Joe', username: 'joe', hood_id: hood1_north.id, password: 'joe')
-user2 = User.create(name: 'Abe', username: 'abe',  hood_id: hood10_ferry.id, password: 'abe')
-=end
+user2 = User.create(name: 'Abe', username: 'abe', hood_id: hood10_ferry.id, password: 'abe', password_confirmation: 'abe')
 
 game1 = Game.create
 
-waste1  = Waste.create!(name: 'Banana peel',          category: 'compost')
-waste2  = Waste.create(name: 'Coffee grounds',        category: 'compost')
-waste3  = Waste.create(name: 'Tea bags',              category: 'compost')
-waste4  = Waste.create(name: 'Wooden chopsticks',     category: 'compost')
-waste5  = Waste.create(name: 'Coffee grounds',        category: 'compost')
-waste6  = Waste.create(name: 'Carrot tops',           category: 'compost')
-waste7  = Waste.create(name: 'Eggshells',             category: 'compost')
-waste8  = Waste.create(name: 'Chicken bones',         category: 'compost')
+dir_files = []
+root = "public/images/"
+folders = ['trash', 'food-waste', 'recycle']
+folders.each do |folder|
+  Dir.foreach(root+folder) do |item|
+    next if item == '.' or item == '..'
+    file_attrs={}
+    file_attrs[:title] = item.sub(".png", "").gsub(/(\d)+/, "").gsub("-", " ").capitalize.strip
+    file_attrs[:path] = "#{Dir.pwd}/#{folder}/#{item}"
+    file_attrs[:category] = folder
+    Waste.create!(name: file_attrs[:title], category: file_attrs[:category], img_url: file_attrs[:path])
+  end
+end
 
-waste9  = Waste.create(name: 'Styrofoam cup',         category: 'trash')
-waste10 = Waste.create(name: 'Loose soda bottle lid', category: 'trash')
-waste11 = Waste.create(name: 'Potato chip bag',       category: 'trash')
-waste12 = Waste.create(name: 'Candy wrapper',         category: 'trash')
-waste13 = Waste.create(name: 'Plastic straw',         category: 'trash')
-waste14 = Waste.create(name: 'Six-pack rings',        category: 'trash')
-
-waste15 = Waste.create(name: 'Starbucks coffee lid',  category: 'recycling')
-waste16 = Waste.create(name: 'Plastic water bottle',  category: 'recycling')
-waste17 = Waste.create(name: 'Starbucks coffee cup',  category: 'recycling')
-waste18 = Waste.create(name: 'Soda can',              category: 'recycling')
-waste19 = Waste.create(name: 'Plastic bags',          category: 'recycling')
-waste20 = Waste.create(name: 'Wine bottle',           category: 'recycling')
+# waste1  = Waste.create!(name: 'Banana peel',          category: 'compost')
+# waste2  = Waste.create(name: 'Coffee grounds',        category: 'compost')
+# waste3  = Waste.create(name: 'Tea bags',              category: 'compost')
+# waste4  = Waste.create(name: 'Wooden chopsticks',     category: 'compost')
+# waste5  = Waste.create(name: 'Coffee grounds',        category: 'compost')
+# waste6  = Waste.create(name: 'Carrot tops',           category: 'compost')
+# waste7  = Waste.create(name: 'Eggshells',             category: 'compost')
+# waste8  = Waste.create(name: 'Chicken bones',         category: 'compost')
+#
+# waste9  = Waste.create(name: 'Styrofoam cup',         category: 'trash')
+# waste10 = Waste.create(name: 'Loose soda bottle lid', category: 'trash')
+# waste11 = Waste.create(name: 'Potato chip bag',       category: 'trash')
+# waste12 = Waste.create(name: 'Candy wrapper',         category: 'trash')
+# waste13 = Waste.create(name: 'Plastic straw',         category: 'trash')
+# waste14 = Waste.create(name: 'Six-pack rings',        category: 'trash')
+#
+# waste15 = Waste.create(name: 'Starbucks coffee lid',  category: 'recycling')
+# waste16 = Waste.create(name: 'Plastic water bottle',  category: 'recycling')
+# waste17 = Waste.create(name: 'Starbucks coffee cup',  category: 'recycling')
+# waste18 = Waste.create(name: 'Soda can',              category: 'recycling')
+# waste19 = Waste.create(name: 'Plastic bags',          category: 'recycling')
+# waste20 = Waste.create(name: 'Wine bottle',           category: 'recycling')

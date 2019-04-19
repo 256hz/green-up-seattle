@@ -1,4 +1,9 @@
-<h3 class="message">Create an account</h3>
+
+<% if !logged_in %>
+  <h3 class="message">Create an account</h3>
+<% else %>
+  <h3 class="message">Edit your account</h3>
+<% end %>
 <br>
 <div class="log-in-box">
 <% if @errors %>
@@ -9,7 +14,7 @@
 </ul>
 <% end %>
 
-<% label_class = {class: "col-sm-5 label_class"} %>
+<% label_class = {class: "col-sm-8 label_class"} %>
 <% field_class = "col-sm-7 field_class" %>
 
 <div class="container">
@@ -46,7 +51,11 @@
         <%= f.collection_select(:hood_id, Hood.all.sort_by(&:id), :id, :name_with_id, include_blank: 'Select your \'hood') %>
       </div>
     </div>
-    <%= f.submit name="Create"%>
+    <% if logged_in %>
+      <%= f.submit name="Update"%>
+    <% else %>
+      <%= f.submit name="Create"%>
+    <% end %>
   </div> <!-- container-form -->
 <% end %>
 
