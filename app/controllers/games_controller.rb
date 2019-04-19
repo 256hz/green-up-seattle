@@ -31,6 +31,7 @@
   end
 
   def answer
+    # byebug
     if params[:commit] == session[:waste]['category']
       session[:points] += session[:point_value]
       @round.update(score: session[:point_value])
