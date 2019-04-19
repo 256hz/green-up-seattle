@@ -1,18 +1,23 @@
-<% if logged_in %>
-  <h1>This is the game</h1>
+  <h1>Bin It to Win It!</h1>
 
-  <p>Here are the rules to the game.</p>
+  <% if logged_in %>
+  <div class="game-intro">
 
+  <h3>Confused about where your garbage should go?</h3>
+  <h4>Play 'Bin It to Win It' to improve your trash tossing skills and help fight misplaced waste to Green Up your neighborhood!</h4>
+
+<h4>Instructions:</h4>
   <ol>
-    <li>The item.</li>
-    <li>Pick the right place to dispose of the item.</li>
-    <li>Get 1 point for each right answer.</li>
-    <li>There are <%= session[:rounds].size %> rounds.</li>
-    <li>Good luck!</li>
+    <li>Each round you will be shown a common waste item.</li>
+    <li>Select the correct bin and get 10 points!</li>
+    <li>You'll have <%= @num_rounds %> rounds to test your knowledge.</li>
+    <li>The more points you get, the greener your 'hood gets!</li>
+    <li>Press start to play!</li>
   </ol>
 
-  <%= link_to 'New Game', '/games/round' %>
+  <center><a href='/games/round' class="btn btn-success">START</a></center>
+</div>
 <% else %>
-  <h2 class="flash">You must log in to play!</h2>
-  <%= link_to 'Login', '/users' %>
+  <h3 class="message">You must <a href='/'>log in</a> to play!</h3>
+
 <% end %>
