@@ -15,7 +15,7 @@
 
     <% if @hoods[place] == @hood %>
       <h4> <%= (place + 1).ordinalize %> Place Overall</h4>
-      <h4> Only <%= (@hoods[place-1].hood_score+1) - @hood.hood_score %> points to beat the <%= @hoods[place-1].name %>!</h4>
+      <h4> Only <%= (@hoods[place-1].hood_score+10) - @hood.hood_score %> points to beat the <%= @hoods[place-1].name %>!</h4>
     <% end %>
 
   <% end %>

@@ -12,16 +12,16 @@ Game.destroy_all
 Round.destroy_all
 Waste.destroy_all
 
-hood1_north   = Hood.create!(name: 'North Seattle Nightmares', hood_score: 101)
-hood2_ballard = Hood.create(name: 'Ballard Brigade',           hood_score: 66)
-hood3_udub    = Hood.create(name: 'U District Undertakers',    hood_score: 54)
-hood4_mag     = Hood.create(name: 'The Magical MagInQueens',   hood_score: 123)
-hood5_cap     = Hood.create(name: 'Cap Hill Crushers',         hood_score: 154)
-hood6_down    = Hood.create(name: 'Downtown Dragons',          hood_score: 143)
-hood7_east    = Hood.create(name: 'East Seattle Endgame',      hood_score: 111)
-hood8_west    = Hood.create(name: 'West Seattle Wahoos',       hood_score: 89)
-hood9_south   = Hood.create(name: 'South Seattle Strikers',    hood_score: 189)
-hood10_ferry  = Hood.create(name: 'Ferocious Ferryriders',     hood_score: 155)
+hood1_north   = Hood.create!(name: 'North Seattle Nightmares', hood_score: 300)
+hood2_ballard = Hood.create(name: 'Ballard Brigade',           hood_score: 120)
+hood3_udub    = Hood.create(name: 'U District Undertakers',    hood_score: 50)
+hood4_mag     = Hood.create(name: 'Queen Anne Quasars',        hood_score: 130)
+hood5_cap     = Hood.create(name: 'Cap Hill Crushers',         hood_score: 150)
+hood6_down    = Hood.create(name: 'Downtown Dragons',          hood_score: 140)
+hood7_east    = Hood.create(name: 'East Seattle Endgame',      hood_score: 100)
+hood8_west    = Hood.create(name: 'West Seattle Wahoos',       hood_score: 80)
+hood9_south   = Hood.create(name: 'South Seattle Strikers',    hood_score: 180)
+hood10_ferry  = Hood.create(name: 'Ferocious Ferryriders',     hood_score: 270)
 
 SubHood.create!(hood_id: hood1_north.id,  name: 'Bitter lake')
 SubHood.create(hood_id: hood1_north.id,   name: 'Broadview')
@@ -96,8 +96,14 @@ SubHood.create(hood_id: hood10_ferry.id,  name: 'Bainbridge')
 SubHood.create(hood_id: hood10_ferry.id,  name: 'Bremerton')
 SubHood.create(hood_id: hood10_ferry.id,  name: 'Vashon')
 
-user1 = User.create!(name: 'Joe', username: 'joe', hood_id: hood1_north.id, password: 'joe', password_confirmation: 'joe')
-user2 = User.create(name: 'Abe', username: 'abe', hood_id: hood10_ferry.id, password: 'abe', password_confirmation: 'abe')
+user1 = User.create!(name: 'Joe Y.', username: 'joe', hood_id: hood1_north.id, password: 'joe', password_confirmation: 'joe')
+user2 = User.create(name: 'Abe D.', username: 'abe', hood_id: hood10_ferry.id, password: 'abe', password_confirmation: 'abe')
+user3 = User.create(name: 'Mera S.', username: 'mera', hood_id: hood5_cap.id, password: 'mera', password_confirmation: 'mera')
+user4 = User.create(name: 'Rylan B.', username: 'rylan', hood_id: hood9_south.id, password: 'rylan', password_confirmation: 'rylan')
+user5 = User.create(name: 'Jon L.', username: 'jon', hood_id: hood4_mag.id, password: 'jon', password_confirmation: 'jon')
+user6 = User.create(name: 'Doug W.', username: 'doug', hood_id: hood2_ballard.id, password: 'doug', password_confirmation: 'doug')
+user7 = User.create(name: 'Quinn C.', username: 'quinn', hood_id: hood8_west.id, password: 'quinn', password_confirmation: 'quinn')
+user8 = User.create(name: 'Sofia J.', username: 'sofia', hood_id: hood7_east.id, password: 'sofia', password_confirmation: 'sofia')
 
 game1 = Game.create
 
@@ -109,12 +115,13 @@ folders.each do |folder|
     next if item == '.' or item == '..'
     file_attrs={}
     file_attrs[:category] = folder
-    file_attrs[:path] = "http://localhost:8000/#{root}/#{folder}/#{item}"
+    file_attrs[:path] = "/images/#{folder}/#{item}"
     file_attrs[:title] = item.sub(".png", "").gsub(/(\d)+/, "").gsub("-", " ").capitalize.strip
     Waste.create!(name: file_attrs[:title], category: file_attrs[:category], img_url: file_attrs[:path])
   end
 end
 
+# http://localhost:8000/#{root}
 # waste1  = Waste.create!(name: 'Banana peel',          category: 'compost')
 # waste2  = Waste.create(name: 'Coffee grounds',        category: 'compost')
 # waste3  = Waste.create(name: 'Tea bags',              category: 'compost')
