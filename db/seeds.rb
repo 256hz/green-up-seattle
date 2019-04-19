@@ -115,8 +115,8 @@ folders.each do |folder|
     next if file == '.' or file == '..'
     file_attrs={}
     file_attrs[:category] = folder
-    file_attrs[:path] = "http://localhost:8000/#{root}/#{folder}/#{file}"
-    file_attrs[:title] = file.sub(".png", "").gsub(/(\d)+/, "").gsub("-", " ").capitalize.strip
+    file_attrs[:path] = "/images/#{folder}/#{file}"
+    file_attrs[:title] = file.sub(".png", "").gsub(/(\d)+/, "").gsub("-", " ").strip
     Waste.create!(name: file_attrs[:title], category: file_attrs[:category], img_url: file_attrs[:path])
   end
 end
