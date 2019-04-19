@@ -1,12 +1,14 @@
 <div class="game-intro">
 
-<% if session[:message] %>
+<% if session[:message_cat] == "right" %>
   <h3 class="message"><%= session[:message] %></h3>
+<% else %>
+  <h3 class="message error"><%= session[:message] %></h3>
 <% end %>
 
 <h3>Thanks for playing!</h3>
 <br>
-<h4>You Greened Up your neighborhood by <%= session[:points] %> points!</h4>
+<h4>You Greened Up your neighborhood by <%= @points %> points!</h4>
 <br>
 <h4> <%= @hood.name %> now has a total of <%= @hood.hood_score %> points.</h4>
 <br>
