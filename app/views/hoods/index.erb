@@ -1,12 +1,16 @@
-<h2>Which hood is the greenest?</h2>
+<div class="container hood" align="center">
 
-<% ranked = @hoods.sort_by { |hood| hood.hood_score }.reverse %>
-<ol>
-  <% ranked.each do |hood| %>
-    <% if hood == ranked.first %>
-      <h2><li><%= link_to hood.name, hood %> - <%= hood.hood_score %></li></h2>
-    <% else %>
-      <li><%= link_to hood.name, hood %> - <%= hood.hood_score %></li>
+  <h2>Which hood is the greenest?</h2>
+
+  <% ranked = @hoods.sort_by { |hood| hood.hood_score }.reverse %>
+  <ol>
+    <% ranked.each do |hood| %>
+      <% if hood == ranked.first %>
+        <h2><li class="hood-list"><%= link_to hood.name, hood %> - <%= hood.hood_score %></li></h2>
+      <% else %>
+        <li class="hood-list"><%= link_to hood.name, hood %> - <%= hood.hood_score %></li>
+      <% end %>
     <% end %>
-  <% end %>
-</ol>
+  </ol>
+
+</div>
