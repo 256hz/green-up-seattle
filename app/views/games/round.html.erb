@@ -1,24 +1,24 @@
-
 <div class="game-round">
 
-<h3 class="message"><%= flash[:message] %></h3>
+  <% if session[:message] %>
+    <h3 class="message"><%= session[:message] %></h3>
+  <% end %>
 
-<h2>Round <%= session[:round] %></h2>
+  <h2>Round <%= session[:round] %></h2>
+  <h3>Points: <%= session[:points] %></h3>
+  <br>
 
-<h3>Points: <%= session[:points] %></h3>
-<br>
+  <img class="wastepic" src="<%= @waste.img_url %>" alt="image goes here" />
 
-<img src="/" alt="image goes here" style="wastepic">
+  <h3>Which bin does this go in?</h3>
 
-<h3>Which bin does this go in?</h3>
-
-<%= session[:waste]['name'] %>
-<br>
-<br>
-<%= form_tag ({controller: 'games', action: 'round', method: 'post'}) do %>
-<%= submit_tag value='trash' %>
-<%= submit_tag value='recycling' %>
-<%= submit_tag value='compost' %>
-<% end %>
+  <%= @waste['name'] %>
+  <br>
+  <br>
+  <%= form_tag ({controller: 'games', action: 'round', method: 'post'}) do %>
+    <%= submit_tag value='trash' %>
+    <%= submit_tag value='recycling' %>
+    <%= submit_tag value='compost' %>
+  <% end %>
 
 </div>

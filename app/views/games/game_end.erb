@@ -1,5 +1,9 @@
 <div class="game-intro">
 
+<% if session[:message] %>
+  <h3 class="message"><%= session[:message] %></h3>
+<% end %>
+
 <h3>Thanks for playing!</h3>
 <br>
 <h4>You Greened Up your neighborhood by <%= session[:points] %> points!</h4>

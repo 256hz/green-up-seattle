@@ -102,15 +102,15 @@ user2 = User.create(name: 'Abe', username: 'abe', hood_id: hood10_ferry.id, pass
 game1 = Game.create
 
 dir_files = []
-root = "public/images/"
-folders = ['trash', 'food-waste', 'recycle']
+root = "public/images"
+folders = ['trash', 'compost', 'recycling']
 folders.each do |folder|
-  Dir.foreach(root+folder) do |item|
+  Dir.foreach(root+"/"+folder) do |item|
     next if item == '.' or item == '..'
     file_attrs={}
-    file_attrs[:title] = item.sub(".png", "").gsub(/(\d)+/, "").gsub("-", " ").capitalize.strip
-    file_attrs[:path] = "#{Dir.pwd}/#{folder}/#{item}"
     file_attrs[:category] = folder
+    file_attrs[:path] = "http://localhost:8000/#{root}/#{folder}/#{item}"
+    file_attrs[:title] = item.sub(".png", "").gsub(/(\d)+/, "").gsub("-", " ").capitalize.strip
     Waste.create!(name: file_attrs[:title], category: file_attrs[:category], img_url: file_attrs[:path])
   end
 end

@@ -10,29 +10,32 @@
       session[:rounds] = []
       session[:round] = 1
       session[:points] = 0
+      session[:point_value] = 10
       session[:hood] = User.find(session[:user_id]).hood.name
+      session[:message] = nil
 
       waste_ids = Waste.ids.sample(@num_rounds)
       waste_ids.each do |waste_id|
         round = Round.create(user_id: session[:user_id], game_id: game.id, waste_id: waste_id, score: 0)
         session[:rounds] << round.id
       end
+
     end
 
   end
 
   def round
     # set session[:waste] to the waste obj at the current round's index
-    session[:waste] = Waste.find(@round.waste_id)
+    @waste = session[:waste] = Waste.find(@round.waste_id)
   end
 
   def answer
     if params[:commit] == session[:waste]['category']
-      session[:points] += 10
-      @round.update(score: 10)
-      flash[:message] = 'Nice!'
+      session[:points] += session[:point_value]
+      @round.update(score: session[:point_value])
+      session[:message] = 'Nice!'
     else
-      flash[:message] = "Actually, #{session[:waste]['name']} goes in the #{session[:waste]['category']}."
+      session[:message] = "Actually, #{session[:waste]['name']} go in the #{session[:waste]['category']}."
     end
 
     session[:round] += 1
