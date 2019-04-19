@@ -1,46 +1,49 @@
 <h3 class="message">Create an account</h3>
-
+<br>
+<div class="log-in-box">
 <% if @errors %>
+<ul>
   <% @errors.each do |error| %>
-  <%= error %>
+  <li class="error"><%= error %></li>
   <% end %>
+</ul>
 <% end %>
 
 <% label_class = {class: "col-sm-5 label_class"} %>
 <% field_class = "col-sm-7 field_class" %>
 
 <div class="container">
-
+<% @w = 28 %>
 <%= form_for @user do |f| %>
   <div class="container-form">
     <div class="form-group row">
       <%= f.label :name, options=label_class %>
       <div class="col-sm-6 field_class">
-        <%= f.text_field :name, size: 25 %>
+        <%= f.text_field :name, size: @w %>
       </div>
     </div>
     <div class="form-group row">
       <%= f.label :username, options=label_class %>
       <div class="col-sm-6 field_class">
-        <%= f.text_field :username, size: 25 %>
+        <%= f.text_field :username, size: @w %>
       </div>
     </div>
     <div class="form-group row">
       <%= f.label :password, options=label_class %>
       <div class="col-sm-6 field_class">
-        <%= f.text_field :password, size: 25 %>
+        <%= f.password_field :password, size: @w %>
       </div>
     </div>
     <div class="form-group row">
       <%= f.label :password_confirmation, options=label_class %>
       <div class="col-sm-6 field_class">
-        <%= f.text_field :password_confirmation, size: 25 %>
+        <%= f.password_field :password_confirmation, size: @w %>
       </div>
     </div>
     <div class="form-group row">
       <%= f.label :hood_id, options=label_class %>
       <div class="col-sm-6 field_class">
-        <%= f.collection_select(:hood_id, Hood.all, :id, :name, include_blank: 'Select your \'hood') %>
+        <%= f.collection_select(:hood_id, Hood.all.sort_by(&:id), :id, :name_with_id, include_blank: 'Select your \'hood') %>
       </div>
     </div>
     <%= f.submit name="Create"%>
@@ -48,3 +51,4 @@
 <% end %>
 
 </div> <!-- container -->
+</div> <!-- log in box -->

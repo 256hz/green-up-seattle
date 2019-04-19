@@ -4,7 +4,7 @@
   def index
     if logged_in
       # sets the total rounds in the game
-      rounds = 5
+      @num_rounds = 5
       game = Game.create
 
       session[:rounds] = []
@@ -12,7 +12,7 @@
       session[:points] = 0
       session[:hood] = User.find(session[:user_id]).hood.name
 
-      waste_ids = Waste.ids.sample(rounds)
+      waste_ids = Waste.ids.sample(@num_rounds)
       waste_ids.each do |waste_id|
         round = Round.create(user_id: session[:user_id], game_id: game.id, waste_id: waste_id, score: 0)
         session[:rounds] << round.id
@@ -29,10 +29,10 @@
   def answer
     if params[:commit] == session[:waste]['category']
       session[:points] += 10
-      @round.update(score: 1)
+      @round.update(score: 10)
       flash[:message] = 'Nice!'
     else
-      flash[:message] = "#{session[:waste]['name']} should be put into the #{session[:waste]['category']}."
+      flash[:message] = "Actually, #{session[:waste]['name']} goes in the #{session[:waste]['category']}."
     end
 
     session[:round] += 1

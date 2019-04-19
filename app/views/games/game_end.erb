@@ -1,7 +1,11 @@
+<div class="game-intro">
+
 <h3>Thanks for playing!</h3>
+<br>
+<h4>You Greened Up your neighborhood by <%= session[:points] %> points!</h4>
+<br>
+<h4> <%= @hood.name %> now has a total of <%= @hood.hood_score %> points.</h4>
+<br>
+<center><a href='/games' class="btn btn-success">PLAY AGAIN</a> &nbsp; <a href='/hoods' class="btn btn-primary">See Your Hood's Rank</a></center>
 
-<p> You got <%= session[:points] %> / <%= session[:rounds].size %> points. </p>
-
-<p> Now <%= @hood.name %> has a total of <%= @hood.hood_score %> points.  Way to go!</p>
-
-<%= link_to 'New Game', '/games/' %>
+</div>

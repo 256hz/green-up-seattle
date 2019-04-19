@@ -16,16 +16,24 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
 
-$happy-green: #7CBD31
+$happy-green: #009444
+
+// ------- MAIN ------------
+
+h1
+  color: $happy-green
+  font-weight: bold
+  text-align: center
+  padding: 10px
 
 body
   font-family: 'Lato', sans-serif
 
-.col-sm
-  border: 1px solid red
-
 .username
   color: white
+
+.col-sm
+  border: 1px solid red
 
 .navbar-default
   // border: 1px solid yellow
@@ -34,15 +42,11 @@ body
   vertical-align: middle
 
 .navbar-default .navbar-text
-
   font-family: 'PT Sans', sans-serif
-  color: $happy-green
+  color: white
   &:hover
-    color: #5A9B29
+    color: $happy-green
     text-decoration: none
-
-.container
-  // border: 1px solid red
 
 .container-form
   // border: 1px solid red
@@ -59,16 +63,24 @@ body
   // align-content: left
   padding-left: 10px
 
+// ----------- LOGIN & CREATE ---------------
+
+.log-in-box
+  border: 1px solid black
+  padding: 20px
+  margin: 20px
+  width: 400px
+  text-align: center
+  background-color: #ddd
+
+
+// ----------- NAVIGATION ----------------
+
 .container-nav
   color: #f2f2f2
   &:hover
     color: #009444
     text-decoration: none
-
-.container
-  // float: left
-  // border: 1px solid teal
-  // width: 100%
 
 .navbar-header
   // border: 1px solid red
@@ -97,13 +109,9 @@ body
 
 .navbar-text
   // border: 1px solid blue
-  text-shadow: 0 0 1.25px white
   color: white
-  
-.message
-  text-align: center
-  color: $happy-green
-  margin: 15
+
+// ----------- FOOTER ----------------
 
 .footer
   position: absolute
@@ -114,4 +122,36 @@ body
   // background-color: #f5f5f5
   background-image: url("/seattle-skyline-long.svg")
   background-repeat: repeat-x
-  z-index: -1
+  z-index: -100
+
+// ----------- MESSAGES ----------------
+
+.message
+  text-align: center
+  color: $happy-green
+  margin: 15
+
+.error
+  color: red
+
+// --------- GAME --------------------
+
+.game-intro
+  border: none
+  border-radius: 20px
+  background-color: rgba(140, 198, 63, 0.3)
+  padding: 20px 40px
+  margin: auto
+  width: 600px
+  text-align: left
+
+.game-round
+  margin: auto
+  padding: 40px 60px
+  text-align: center
+
+.wastepic
+  width: 400px
+  height: 300px
+  border: 2px solid $happy-green
+  border-radius: 20px
