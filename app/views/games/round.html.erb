@@ -1,7 +1,9 @@
 <div class="game-round">
 
-  <% if session[:message] %>
+  <% if session[:message_cat] == "right" %>
     <h3 class="message"><%= session[:message] %></h3>
+  <% else %>
+    <h3 class="message error"><%= session[:message] %></h3>
   <% end %>
 
   <h2>Round <%= session[:round] %></h2>

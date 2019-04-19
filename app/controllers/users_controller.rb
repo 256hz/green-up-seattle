@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -34,6 +34,13 @@ class UsersController < ApplicationController
       @errors = @user.errors.full_messages
       render :new
     end
+  end
+
+  def destroy
+    @user.destroy
+    session.clear
+    flash[:message] = "Profile Deleted!"
+    redirect_to '/'
   end
 
   private

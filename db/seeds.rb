@@ -112,7 +112,7 @@ root = "public/images"
 folders = ['trash', 'compost', 'recycling']
 folders.each do |folder|
   Dir.foreach(root+"/"+folder) do |file|
-    next if file == '.' or file == '..'
+    next if file == '.' or file == '..' or file == '.DS_Store'
     file_attrs={}
     file_attrs[:category] = folder
     file_attrs[:path] = "/images/#{folder}/#{file}"

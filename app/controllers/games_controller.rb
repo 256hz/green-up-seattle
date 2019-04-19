@@ -13,6 +13,7 @@
       session[:point_value] = 10
       session[:hood] = User.find(session[:user_id]).hood.name
       session[:message] = nil
+      session[:message_cat] = nil
 
       waste_ids = Waste.ids.sample(@num_rounds)
       waste_ids.each do |waste_id|
@@ -33,8 +34,9 @@
     if params[:commit] == session[:waste]['category']
       session[:points] += session[:point_value]
       @round.update(score: session[:point_value])
-      session[:message] = 'Nice!'
+      session[:message] = self.right_answer
     else
+      session[:message_cat] = "wrong"
       session[:message] = "Actually, #{session[:waste]['name']} go in the #{session[:waste]['category']}."
     end
 
@@ -47,11 +49,35 @@
     end
   end
 
+  def right_answer
+    session[:message_cat] = "right"
+    [
+      "Nice!",
+      "Excellent work!",
+      "You're crushing it!",
+      "Observe the lamentation of your enemies!",
+      "War is hell, except when you're winning!",
+      "Your hood will reign victorious!",
+      "Waste fears you!",
+      "Another notch on your belt!",
+      "The park just got a little nicer!",
+      "The rivers run a little cleaner today.",
+      "Post-apocalypse, shmost-apocalypse!",
+      "You can start to see the ground again!",
+      "Incredible!",
+      "Victory!",
+      "A greener planet awaits!",
+      "You must be out of bubblegum!",
+      "Seattle's bards will sing songs about you!"
+    ].sample
+  end
+
   def game_end
     # total up score, add to user's score, add to hood's score
+    @points = session[:points]
+    session[:points] = 0
     @hood = Hood.find_by(name: session[:hood])
-    @hood_score = @hood.hood_score += session[:points]
-    @hood.update(hood_score: @hood_score)
+    @hood.update(hood_score: @hood.hood_score + @points)
   end
 
   private
