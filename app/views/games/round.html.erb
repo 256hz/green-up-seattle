@@ -16,9 +16,9 @@
   <br>
   <br>
   <%= form_tag ({controller: 'games', action: 'round', method: 'post'}) do %>
-    <%= submit_tag value='trash' %>
-    <%= submit_tag value='recycling' %>
-    <%= submit_tag value='compost' %>
+    <%= image_submit_tag("/images/buttons/trash-button.png", name: 'commit', value: 'trash') %>
+    <%= image_submit_tag("/images/buttons/recycle-button.png", name: 'commit', value: 'recycling') %>
+    <%= image_submit_tag("/images/buttons/compost-button.png", name: 'commit', value: 'compost') %>
   <% end %>
 
 </div>
