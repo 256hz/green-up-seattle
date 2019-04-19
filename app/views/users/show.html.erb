@@ -6,8 +6,8 @@
   <h4>Total Points: <%= @user.points %> </h4>
   <br>
   <% if @user.id == session[:user_id] %>
-    <%= button_to 'Edit Profile', {action: "edit", method: :get, id: @user.id}, {class: "btn btn-primary"} %>
-    <br>
-    <%= button_to "Delete Profile", user_path(@user), method: :delete, data: {confirm: "Are you sure?"} %>
+    <p><%= link_to 'Edit Profile', {action: "edit", method: :get, id: @user.id}, {class: "btn btn-primary"} %></p>
+    
+    <p><%= button_to "Delete Profile", user_path(@user), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"} %></p>
   <% end %>
 </div>
