@@ -31,7 +31,7 @@ body
 
 .index-page
   text-align: center
-  
+
 .username
   color: white
 
@@ -66,12 +66,24 @@ body
   // align-content: left
   padding-left: 10px
 
+.hood-list
+  text-decoration: none
+  list-style-type: none
+  &:hover
+    text-decoration: none
+    color: $happy-green
+
+.hood .container
+  width: 200px
+  align: center
+  margin: auto
+
 // ----------- LOGIN & CREATE ---------------
 
 .log-in-box
   border: 1px solid black
   padding: 20px
-  margin: 20px
+  margin: 20px 20px 20px 350px
   width: 400px
   text-align: center
   background-color: #ddd
@@ -160,3 +172,15 @@ body
   width: auto
   border: 2px solid $happy-green
   border-radius: 20px
+
+// --------- RESOURCES --------------------
+
+.resource
+  align-content: center
+  text-align: center
+  text-decoration: none
+  font-size: 1.75em
+  color: $happy-green
+  &:hover
+    color: #009444
+    text-decoration: none

@@ -1,30 +1,32 @@
-<h2> <%= @hood.name %> </h2>
+<div class="container" align="center">
 
-<%= form_tag '/hoods', method: :get do %>
-  <div class='button'> <%= submit_tag 'Back' %> </div>
-<% end %>
+  <h2> <%= @hood.name %> </h2>
 
-<h3> Total Points: <%= @hood.hood_score %> </h3>
+  <%= form_tag '/hoods', method: :get do %>
+    <div class='button'> <%= submit_tag 'Back' %> </div>
+  <% end %>
 
-<% if @hood == Hood.all.max_by(&:hood_score) %>
-  <h4>Congrats <%= @hood.name.split.last %>, you're in first place!</h4>
+  <h3> Total Points: <%= @hood.hood_score %> </h3>
 
-<% else %>
-  <% @hoods = Hood.all.sort_by(&:hood_score).reverse %>
-  <% (1..@hoods.count-1).to_a.each do |place| %>
+  <% if @hood == Hood.all.max_by(&:hood_score) %>
+    <h4>Congrats <%= @hood.name.split.last %>, you're in first place!</h4>
 
-    <% if @hoods[place] == @hood %>
-      <h4> <%= (place + 1).ordinalize %> Place Overall</h4>
-      <h4> Only <%= (@hoods[place-1].hood_score+10) - @hood.hood_score %> points to beat the <%= @hoods[place-1].name %>!</h4>
+  <% else %>
+    <% @hoods = Hood.all.sort_by(&:hood_score).reverse %>
+    <% (1..@hoods.count-1).to_a.each do |place| %>
+
+      <% if @hoods[place] == @hood %>
+        <h4> <%= (place + 1).ordinalize %> Place Overall</h4>
+        <h4> Only <%= (@hoods[place-1].hood_score+10) - @hood.hood_score %> points to beat the <%= @hoods[place-1].name %>!</h4>
+      <% end %>
     <% end %>
 
   <% end %>
 
-<% end %>
-
-<h4> Team Neighborhoods: </h4>
-<ul>
-  <% @hood.sub_hoods.each do |sub_hood| %>
-    <li> <%= sub_hood.name %> </li>
-  <% end %>
-</ul>
+  <h4> Team Neighborhoods: </h4>
+  <ul>
+    <% @hood.sub_hoods.each do |sub_hood| %>
+      <li class="hood-list"> <%= sub_hood.name %> </li>
+    <% end %>
+  </ul>
+</div>
