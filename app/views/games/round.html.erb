@@ -6,7 +6,7 @@
     <h3 class="message error"><%= session[:message] %></h3>
   <% end %>
 
-  <h2>Round <%= session[:round] %></h2>
+  <h3>Round <%= session[:round] %></h3>
   <h3>Points: <%= session[:points] %></h3>
   <br>
 
@@ -14,13 +14,18 @@
 
   <h3>Which bin does this go in?</h3>
 
-  <%= @waste['name'] %>
-  <br>
+  <p>( <%= @waste['name'] %> )</p>
   <br>
   <%= form_tag ({controller: 'games', action: 'round', method: 'post'}) do %>
-    <%= submit_tag "trash" %>
-    <%= submit_tag "recycling" %>
-    <%= submit_tag "compost" %>
+    <img src="/images/buttons/trash-button.png" class="answer-button" alt="trash">
+    <%= submit_tag value='trash' %>
+    <img src="/images/buttons/recycle-button.png" class="answer-button" alt="recycling">
+    <%= submit_tag value='recycling' %>
+    <img src="/images/buttons/compost-button.png" class="answer-button" alt="compost">
+    <%= submit_tag value='compost' %>
+    <!-- <button style="background: url(/images/buttons/compost-button.png)" type="submit" name="commit" value="compost"> -->
+    <!-- <input type="image" src="/images/buttons/compost-button.png" border="2" border-radius="10px" alt="Submit" name="commit" value="compost" data-disable-with="compost"/> -->
+    <!-- <input img="/images/buttons/trash-button.png" type="submit" name="commit" value="trash" data-disable-with="trash"> -->
   <% end %>
 
 </div>
