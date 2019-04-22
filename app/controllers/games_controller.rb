@@ -53,23 +53,25 @@
   def right_answer
     session[:message_cat] = "right"
     [
-      "Nice!",
+      "Nice job!",
       "Excellent work!",
-      "You're crushing it!",
-      "Observe the lamentation of your enemies!",
-      "War is hell, except when you're winning!",
-      "Your hood will reign victorious!",
-      "Waste fears you!",
-      "Another notch on your belt!",
-      "The park just got a little nicer!",
-      "The rivers run a little cleaner today.",
-      "Post-apocalypse, shmost-apocalypse!",
-      "You can start to see the ground again!",
-      "Incredible!",
-      "Victory!",
-      "A greener planet awaits!",
-      "You must be out of bubblegum!",
-      "Seattle's bards will sing songs about you!"
+      "Way to go!",
+      "That's right!"
+      # "You're crushing it!",
+      # "Observe the lamentation of your enemies!",
+      # "War is hell, except when you're winning!",
+      # "Your hood will reign victorious!",
+      # "Waste fears you!",
+      # "Another notch on your belt!",
+      # "The park just got a little nicer!",
+      # "The rivers run a little cleaner today.",
+      # "Post-apocalypse, shmost-apocalypse!",
+      # "You can start to see the ground again!",
+      # "Incredible!",
+      # "Victory!",
+      # "A greener planet awaits!",
+      # "You must be out of bubblegum!",
+      # "Seattle's bards will sing songs about you!"
     ].sample
   end
 
@@ -84,7 +86,6 @@
   private
 
     def set_round
-      # byebug
       @round_no = session[:round]
       @round = Round.find(session[:rounds][@round_no - 1])
     end

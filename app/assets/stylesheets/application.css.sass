@@ -26,8 +26,18 @@ h1
   text-align: center
   padding: 10px
 
+h2
+  background-color: $happy-green
+  color: white
+  padding: 4px
+
+h3
+  color: $happy-green
+  font-weight: bold
+
 body
   font-family: 'Lato', sans-serif
+  background-color: rgba(109, 208, 247, 0.4)
 
 .index-page
   text-align: center
@@ -55,6 +65,12 @@ body
   // border: 1px solid red
   text-align: center
 
+.intro
+  padding: 30px
+  max-width: 700px
+  background-color: white
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+
 
 .label_class
   // border: 1px solid red
@@ -67,12 +83,14 @@ body
   // align-content: left
   padding-left: 10px
 
+// ---------- HOODS ---------------
+
 .hood-list
   text-decoration: none
   // list-style-type: none
-  &:hover
-    text-decoration: none
-    color: $happy-green
+  // &:hover
+  //   text-decoration: none
+  //   color: $happy-green
 
 .hood .container
   width: 200px
@@ -80,9 +98,41 @@ body
   margin: auto
 
 .map-image
-  height: 500px
-  float: right
-  margin-right: 200px
+  height: 460px
+  padding-left: 40px
+
+.show
+  background-color: rgba(255, 255, 255, 0.75)
+  max-width: 600px
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  margin: auto
+  margin-bottom: 30px
+  text-align: center
+  padding: 0px 0px 30px 0px
+
+.hoods-box
+  border: 1px solid black
+  border-radius: 10px
+  padding: 20px
+  margin: auto
+  width: 800px
+  height: auto
+  text-align: left
+  background-color: rgb(232, 232, 232)
+
+// ----------- USER ---------------
+
+.profile
+  background-color: white
+  max-width: 600px
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  margin: auto
+  text-align: center
+  padding: 25px
+
+.underline
+  text-decoration: underline
+
 
 // ----------- LOGIN & CREATE ---------------
 
@@ -99,23 +149,10 @@ body
   border: 1px solid black
   border-radius: 10px
   padding: 20px
-  margin-left: 100px
-  width: 400px
-  text-align: center
+  margin: auto
+  width: 700px
+  height: auto
   background-color: #ddd
-  float: left
-
-.hoods-box
-  border: 1px solid black
-  border-radius: 10px
-  padding: 20px
-  margin-left: 200px
-  margin-top: 50px
-  width: 520px
-  height: 370px
-  text-align: left
-  background-color: rgba(140, 198, 63, 0.3)
-  float: left
 
 
 // ----------- NAVIGATION ----------------
@@ -145,24 +182,25 @@ body
 .navbar-links
   float: right
   font-size: 18px
+  vertical-align: middle
+  padding: 10px
 
 .navbar-text a
-  display: inline-block
-  height: 100%
-  vertical-align: middle
+  // display: inline-block
+  // height: 100%
 
 .navbar-text
-  // border: 1px solid blue
+  // border: 1px solid white
   color: white
+  // vertical-align: middle
 
 // ----------- FOOTER ----------------
 
 .footer
-  position: absolute
+  position: fixed
   bottom: 0
   width: 100%
-  height: 60px
-  line-height: 60px
+  height: 90px
   // background-color: #f5f5f5
   background-image: url("/seattle-skyline-long.svg")
   background-repeat: repeat-x
@@ -182,8 +220,9 @@ body
 
 .game-intro
   border: none
-  border-radius: 20px
-  background-color: rgba(140, 198, 63, 0.3)
+  // border-radius: 20px
+  background-color: #DDF1B5
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
   padding: 20px 40px
   margin: auto
   width: 600px
@@ -194,8 +233,9 @@ body
   padding: 20px 40px
   text-align: center
   width: 600px
-  border-radius: 20px
-  background-color: rgba(140, 198, 63, 0.3)
+  // border-radius: 20px
+  background-color: #DDF1B5
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 
 
 .wastepic
@@ -217,8 +257,14 @@ body
 
 .resource
   text-decoration: none
-  font-size: 1.75em
+  font-size: 1.5em
   color: $happy-green
   &:hover
-    color: #009444
+    color: #8cc63f
     text-decoration: none
+
+.list-box
+  background-color: white
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  padding-bottom: 40px
+  max-width: 800px

@@ -1,16 +1,14 @@
 <!-- <h1>GreenUp! Seattle</h1> -->
 <% if logged_in %>
-  <% flash[:message] = "Welcome Back to the Hood!" %>
-  <h2 class="message"><%=flash[:message]%></h2>
+  <h3 class="message"><%=flash[:message]%></h3>
+  <br>
 <% end %>
 
-<div class="container index-page">
-  <h2>THE YEAR IS 2019.</h2>
-  <h4>War was beginning in the Great City of Seattle.</h4>
-  <h4>Seattle neighborhoods, overrun with miscategorized waste, fell into chaos.</h4>
-  <h4>After the First Wave, ten factions, known as Hoods, emerged.</h4>
-  <h4>Only one could be crowned as the Great Categorizer of Postwar Seattle. Only one could be victorious.</h4>
-  <h2>LET THE GAMES BEGIN!</h2>
+<div class="container intro">
+  <p><span style="font-size: 1.6em; color: #009444">Green Up Seattle</span> is dedicated to helping reduce the misplaced waste problem in the city of Seattle. Create an account and you can help your neighborhood earn green points.</p>
+  <p><i class="fas fa-check" style="color: #009444"></i> Earn points by playing Bin It to Win It, a waste sorting game, to improve your knowledge of proper waste disposal.</p>
+  <p><i class="fas fa-check" style="color: #009444"></i> The neighborhood with the most points at the end of each month will get 20% off their recycling bill for the month!</p>
+  <p><i class="fas fa-check" style="color: #009444"></i> Want to brush up on your skills before playing? Visit our resources page for waste guidelines and more useful information.</p>
 </div>
 <br>
 <% if logged_in %>

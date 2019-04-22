@@ -12,31 +12,31 @@ class User < ApplicationRecord
   validates :hood, presence: true
 
   def points
-    points = Round.all.inject(0) {|points, round| points += round.score if round.user_id == self.id}
-    points ||= 0
+    @points ||= 0
+    Round.all.each do |round|
+      if round.user_id == self.id
+        @points += round.score
+      end
+    end
+    @points
+    # @points = Round.all.inject(0) {|points, round| points += round.score if round.user_id == self.id}
   end
 
   def level
     case self.points
-    when 0..99
-      "1. Seed"
-    when 100..249
-      "2. Sapling"
-    when 250..499
-      "3. Shrub"
-    when 500..799
-      "4. Tree"
-    when 800..1199
-      "5. Ent"
-    when self.points >= 1200
-      "6. Nature Itself"
+      when 0..49
+        "Level 1 - Seed"
+      when 50..199
+        "Level 2 - Sapling"
+      when 200..399
+        "Level 3 - Shrub"
+      when 400..599
+        "Level 4 - Tree"
+      when 600..999
+        "Level 5 - Forest"
+      else
+        "Level 6 - Captain Planet"
     end
-
-    # "1. Seed" if self.points < 100
-    # "2. Sapling" if self.points < 250 && self.points > 99
-    # "3. Shrub" if self.points < 500 && self.points > 249
-    # "4. Tree" if self.points < 800 && self.points > 499
-    # "5. Ent" if self.points < 1200 && self.points > 799
-    # "6. Nature Itself" if self.points > 1199
   end
+
 end

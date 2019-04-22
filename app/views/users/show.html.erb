@@ -1,13 +1,19 @@
-<div class="container" align="center">
-  <h1><%= @user.username %> </h1>
-  <h4><%= @user.hood.name %> </h4>
-  <h2><%= @user.name %> </h2>
-  <h3>Level <%= @user.level %> </h3>
-  <h4>Total Points: <%= @user.points %> </h4>
+<div class="container profile">
+  <span class="fas fa-user-circle" style="font-size: 30pt"></span>
+  <h3><%= @user.username %></h3>
+  <hr>
+  <span class="underline">Name:</span>
+  <h4><%= @user.name %></h4>
+  <span class="underline">Neighborhood:</span>
+  <h4><%= @user.hood.name %></h4>
+  <span class="underline">Level:</span>
+  <h4><%= @user.level %></h4>
+  <span class="underline">Total Points:</span>
+  <h4><%= @user.points / 2 %></h4>
   <br>
   <% if @user.id == session[:user_id] %>
     <p><%= link_to 'Edit Profile', {action: "edit", method: :get, id: @user.id}, {class: "btn btn-primary"} %></p>
-    
+
     <p><%= button_to "Delete Profile", user_path(@user), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"} %></p>
   <% end %>
 </div>

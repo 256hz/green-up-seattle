@@ -1,18 +1,12 @@
 
-<% if !logged_in %>
-  <h3 class="message">Create an account</h3>
-<% else %>
+<% if logged_in %>
   <h3 class="message">Edit your account</h3>
+<% else %>
+  <h3 class="message">Create an account</h3>
 <% end %>
 <br>
-<div class="create-box">
-<% if @errors %>
-<ul>
-  <% @errors.each do |error| %>
-  <li class="error"><%= error %></li>
-  <% end %>
-</ul>
-<% end %>
+<div class="create-box"> <!-- start of box -->
+
 <style>
 
 #right {
@@ -20,54 +14,41 @@
 }
 </style>
 
-
-<div id="right">
-<% @w = 28 %>
-<%= form_for @user do |f| %>
-  <!-- <div class="container-form"> -->
-    <!-- <div class="form-group row"> -->
-      <%= f.label :name %>
-      <!-- <div class="col-sm-6 field_class"> -->
-        <%= f.text_field :name, size: @w %>
-      <!-- </div> -->
-    <!-- </div> -->
-    <!-- <div class="form-group row"> -->
-    <br><br>
-      <%= f.label :username %>
-      <!-- <div class="col-sm-6 field_class"> -->
-        <%= f.text_field :username, size: @w %>
-      <!-- </div> -->
-    <!-- </div> -->
-    <!-- <div class="form-group row"> -->
-    <br><br>
-      <%= f.label :password %>
-      <!-- <div class="col-sm-6 field_class"> -->
-        <%= f.password_field :password, size: @w %>
-        <br><br>
-      <!-- </div> -->
-    <!-- </div> -->
-    <!-- <div class="form-group row"> -->
-      <%= f.label :password_confirmation %>
-      <!-- <div class="col-sm-6 field_class"> -->
-        <%= f.password_field :password_confirmation, size: @w %>
-        <br><br>
-      <!-- </div> -->
-    <!-- </div> -->
-    <!-- <div class="form-group row"> -->
-      <%= f.label :hood_id %> &nbsp;
-      <!-- <div class="col-sm-6 field_class"> -->
-        <%= f.collection_select(:hood_id, Hood.all.sort_by(&:id), :id, :name_with_id, include_blank: 'Select your \'hood') %>
-      <!-- </div> -->
-    <!-- </div> --><br><br>
-  </div>
+  <div style="float: left">
+  <% @w = 28 %>
+  <%= form_for @user do |f| %>
+      <%= f.label :name %><br>
+      <%= f.text_field :name, size: @w %>
+      <br><br>
+      <%= f.label :username %><br>
+      <%= f.text_field :username, size: @w %>
+      <br><br>
+      <%= f.label :password %><br>
+      <%= f.password_field :password, size: @w %>
+      <br><br>
+      <%= f.label :password_confirmation %><br>
+      <%= f.password_field :password_confirmation, size: @w %>
+      <br><br>
+      <%= f.label :hood_id %> <br>
+      <%= f.collection_select(:hood_id, Hood.all.sort_by(&:id), :id, :name_with_id, include_blank: 'Select your \'hood') %>
+      <br><br>
     <% if logged_in %>
-      <%= f.submit name="Update"%>
+      <%= f.submit name="Update" %>
     <% else %>
       <%= f.submit name="Create"%>
     <% end %>
-  <!-- </div> <!-- container-form -->
-<% end %>
+  <% end %>
+<br>
+  <% if @errors %>
+    <ul>
+      <% @errors.each do |error| %>
+      <li class="error"><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  </div>
+  <div>
+    <img src="/seattle-hoods-map.jpg" alt="map of the hoods" class="map-image">
+  </div>
 
-</div> <!-- log in box -->
-
-<img src="/seattle-hoods-map.jpg" alt="map of the hoods" class="map-image">
+</div> <!-- end of box -->

@@ -7,6 +7,7 @@ class HoodsController < ApplicationController
 
   def show
     @hood = Hood.find(params[:id])
+    @users = User.all
   end
 
 
