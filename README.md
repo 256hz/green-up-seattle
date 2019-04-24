@@ -21,4 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Please visit: https://green-up-seattle.herokuapp.com/ to see the final product!
