@@ -1,24 +1,28 @@
-# README
+# Wecome to Green UP! Seattle!
+Hosted at: https://green-up-seattle.herokuapp.com/ 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This game teaches proper categorization of trash, recycling, and compost.
+Ten groups of Seattle neighborhoods compete for the title of Greenest Hood!
 
-Things you may want to cover:
+Features:
 
-* Ruby version
+* Account creation with secure password
+* Form validation
+* Five-round quiz with icons
+* Postgres database seeded with image locations/titles for quiz images/answers
+* Leaderboard with points-to-next-place
+* Individual player profiles with edit capabilities & ranks
+* Team profiles with members
+* Validation to prevent non-active user editing
 
-* System dependencies
+Installation:
 
-* Configuration
+* `> git clone [REPO]`
+* `> rails db:create`
+* `> rails db:migrate && rails db:seed`
+* `> rails s`
 
-* Database creation
+To do:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* Please visit: https://green-up-seattle.herokuapp.com/ to see the final product!
+* Add user profile images
+* JS/CSS animations for game
